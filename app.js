@@ -65,13 +65,16 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-  var sumOfThree = sum(sum(a,b), c);
-//  var firstTwoProd = multiply(a,b);
-  var myMsgSum = a + ' and ' + b + ' and ' + c + ' sum to ' + sumOfThree + '.';
-//  var myMsgProd = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + prodOfThree + '.';
-  console.log(myMsgSum);
-  return [sumOfThree];
+  var sumOfTwo = sum(a,b);
+  var sumOfThree = sum(sumOfTwo[0],c);
+  var myMsgSum = a + ' and ' + b + ' and ' + c + ' sum to ' + sumOfThree[0] + '.';
+  var prodOfTwo = multiply(a,b);
+  var prodOfThree = multiply(prodOfTwo[0],c);
+  var myMsgProd = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + prodOfThree[0] + '.';
+  return [sumOfThree[0], prodOfThree[0], myMsgSum, myMsgProd];
 }
+
+sumAndMultiply();
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
