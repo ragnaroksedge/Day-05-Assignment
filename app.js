@@ -90,11 +90,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 var testArray = [2,3,4]; //eslint-disable-line
 function sumArray(testArray){ //eslint-disable-line
+  var sumOfTwo = sum(testArray[0],testArray[1]);
+  var sumOfThree = sum(sumOfTwo[0], testArray[2]);
+  var sumArrMsg = testArray + ' was passed in as an array of numbers, and ' + sumOfThree[0] + ' is their sum.';
+  return [sumOfThree, sumArrMsg];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -107,8 +111,12 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 
 function multiplyArray(testArray){ //eslint-disable-line
+    var prodOfTwo = multiply(testArray[0],testArray[1]);
+    var prodOfThree = multiply(prodOfTwo[0],testArray[2]);
+    var prodArrMessage = 'The numbers ' + testArray + ' have a product of ' + prodOfThree[0] + '.';
+    return [prodOfThree, prodArrMessage];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions
